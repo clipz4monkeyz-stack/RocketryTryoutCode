@@ -1,0 +1,29 @@
+import pandas as pd
+from sklearn.preprocessing import StandardScaler
+from sklearn.ensemble import RandomForestClassifier
+
+pereira_stats = {
+    'Age': 37,
+    'Height': 76,       # 6'4"
+    'Reach': 79,
+    'Strikes_Landed_PM': 5.1,
+    'Strikes_Absorbed_PM': 3.6,
+    'Takedown_Avg': 0.3,
+    'Takedown_Defense': 75,
+    'KO_TKO_Wins': 12,
+    'Submission_Wins': 0,
+    'Decision_Wins': 3
+}
+
+ddp_stats = {
+    'Age': 30,
+    'Height': 73,       # 6'1"
+    'Reach': 76,
+    'Strikes_Landed_PM': 6.2,
+    'Strikes_Absorbed_PM': 4.5,
+    'Takedown_Avg': 2.3,
+    'Takedown_Defense': 60,
+    'KO_TKO_Wins': 9,
+    'Submission_Wins': 4,
+    'Decision_Wins': 6
+}
