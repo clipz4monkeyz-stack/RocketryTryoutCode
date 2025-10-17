@@ -1,0 +1,26 @@
+train_data = [
+    # Pereira-style fights
+    [37,76,79,5.0,3.5,0.3,74,12,0,3,1],
+    [36,76,79,5.2,3.6,0.4,76,11,0,3,1],
+    [37,76,79,5.1,3.7,0.3,75,12,0,2,1],
+    # DDP-style fights
+    [30,73,76,6.0,4.5,2.0,60,9,4,5,0],
+    [29,73,76,6.3,4.4,2.1,58,8,3,5,0],
+    [30,73,76,6.2,4.6,2.2,62,9,4,6,0],
+]
+columns = ['Age','Height','Reach','Strikes_Landed_PM','Strikes_Absorbed_PM',
+           'Takedown_Avg','Takedown_Defense','KO_TKO_Wins','Submission_Wins',
+           'Decision_Wins','Winner']
+
+df_train = pd.DataFrame(train_data, columns=columns)
+
+X_train = df_train.drop('Winner', axis=1)
+y_train = df_train['Winner']
+
+# 3. SCALE FEATURES
+scaler = StandardScaler()
+X_train_scaled = scaler.fit_transform(X_train)
+
+# 4. TRAIN RANDOM FOREST
+model = RandomForestClassifier(n_estimators=100, random_state=42)
+model.fit(X_train_scaled, y_train)
