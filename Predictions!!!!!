@@ -1,1 +1,2 @@
-
+pred = model.predict(matchup_scaled)[0]
+proba = model.predict_proba(matchup_scaled)[0]
