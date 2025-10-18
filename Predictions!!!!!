@@ -1,2 +1,9 @@
 pred = model.predict(matchup_scaled)[0]
 proba = model.predict_proba(matchup_scaled)[0]
+print("Prediction for Alex Pereira vs Dricus Du Plessis:")
+if pred == 1:
+    print("Predicted winner: Alex Pereira")
+else:
+    print("Predicted winner: Dricus Du Plessis")
+
+print(f"Win probabilities: Pereira {proba[1]:.2f}, DDP {proba[0]:.2f}")
