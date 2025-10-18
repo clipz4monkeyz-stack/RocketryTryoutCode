@@ -1,0 +1,15 @@
+matchup_df = pd.DataFrame([{
+    'Age': pereira_stats['Age'] - ddp_stats['Age'],
+    'Height': pereira_stats['Height'] - ddp_stats['Height'],
+    'Reach': pereira_stats['Reach'] - ddp_stats['Reach'],
+    'Strikes_Landed_PM': pereira_stats['Strikes_Landed_PM'] - ddp_stats['Strikes_Landed_PM'],
+    'Strikes_Absorbed_PM': pereira_stats['Strikes_Absorbed_PM'] - ddp_stats['Strikes_Absorbed_PM'],
+    'Takedown_Avg': pereira_stats['Takedown_Avg'] - ddp_stats['Takedown_Avg'],
+    'Takedown_Defense': pereira_stats['Takedown_Defense'] - ddp_stats['Takedown_Defense'],
+    'KO_TKO_Wins': pereira_stats['KO_TKO_Wins'] - ddp_stats['KO_TKO_Wins'],
+    'Submission_Wins': pereira_stats['Submission_Wins'] - ddp_stats['Submission_Wins'],
+    'Decision_Wins': pereira_stats['Decision_Wins'] - ddp_stats['Decision_Wins'],
+}])
+
+
+matchup_scaled = scaler.transform(matchup_df)
